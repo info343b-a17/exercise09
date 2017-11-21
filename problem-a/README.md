@@ -20,14 +20,14 @@ You can then view the rendered page _in a web browser_. Remember to check the De
 
 
 ## Exercise Instructions
-To complete the exercise, edit the included **`src/App.js`** file and **`src/AdoptPet.js`** and add in the required code. Note that you should ___not___ need to edit any of the other provided files (including `index.js` or `index.html`).
+To complete the exercise, edit the included **`src/index.js`**, **`src/App.js`**, and **`src/AdoptPet.js`** files and add in the required code. Note that you should ___not___ need to edit any of the other provided files.
 
 
-1. In order to make your app perform client-side routing to **`src/App.js`**, you will need to `import` the `BrowserRouter` and `Route` components from `react-router-dom` (which has already been installed as a dependency).
+1. In order to make your app perform client-side routing, you will need to `import` the `BrowserRouter` component from `react-router-dom` (which has already been installed as a dependency), and "wrap" the `<App>` component in a `<BrowserRouter>`. 
 
-    Modify the `App` component's `render()` function so that the entire content is contained within in a `<BrowserRouter>` element.
+    Modify the **`index.js`** file so that instead of passing just an `<App>` component to `ReactDOM.render()`, you pass a `<BrowserRouter>` that contains an `<App>` as a child element.
 
-2. Then replace the rendered `<PetList>` element with the following routes:
+2. In the **`src/App.js`** file, import the `Route` component from React Router. Then modify the `App` component's `render()` function, replacing the rendered `<PetList>` element with the following routes:
 
     - The route `/` should render a `<PetList>` (note that it will not show any pets initially).
     - The route `/about` should render a `<AboutPage>`
@@ -63,7 +63,7 @@ To complete the exercise, edit the included **`src/App.js`** file and **`src/Ado
 
     (The "adopt" button is disabled, since that functionality isn't implemented in this exercise).
 
-8. Finally, add functionality so that whe you click on each `PetCard`, the page _redirects_ to the appropriate `/adopt` route.
+8. Finally, add functionality so that when you click on each `PetCard`, the page _redirects_ to the appropriate `/adopt` route.
 
     To do this, modify the `PetCard` class (in `src/App.js`) so that when you click on the card, you assign a value to that component's `state` indicating that you should redirect to the detail page for that pet's name.
 
